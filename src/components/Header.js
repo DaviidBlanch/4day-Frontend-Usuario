@@ -4,7 +4,7 @@ import Privacidad from './footer/Privacidad'
 import AvisoLegal from './footer/AvisoLegal'
 import Footer from './footer/Footer'
 import TinderCards from './body/TinderCards'
-// import Perfil from './body/Perfil'
+import Perfil from './body/Perfil'
 import '../styles/layout.css'
 import { Routes, Route, Link } from 'react-router-dom'
 // import newPostService from '../components/services/posts/newPost'
@@ -50,7 +50,7 @@ export default function Header (props) {
           <Route path='/privacidad' element={<Privacidad />} />
           <Route path='/avisoLegal' element={<AvisoLegal />} />
           <Route path='/about' element={<About />} />
-          {/* <Route path='/profile' element={<Perfil />} /> */}
+          <Route path='/profile' element={<Perfil />} />
           <Route path='/' element={<TinderCards />} />
         </Routes>
       </div>
