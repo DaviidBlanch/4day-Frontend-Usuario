@@ -1,5 +1,5 @@
 
-export default function Perfil () {
+export default function Perfil (props) {
   return (
     <div>
       Hola Pefil
