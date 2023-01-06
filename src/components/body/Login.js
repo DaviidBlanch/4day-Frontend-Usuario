@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import loginService from '../services/login/login'
 import Header from '../Header'
-// import RegisterForm from '../body/RegisterForm'
-// import VisibleButton from './VisibleButton'
+import RegisterForm from '../body/RegisterForm'
+import VisibleButton from './VisibleButton'
 
 export default function LoginForm () {
   const [usuario, setUsuario] = useState('')
@@ -75,9 +75,9 @@ export default function LoginForm () {
             <button type='submit' className='text-white bg-red-700  focus:ring-4 focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center'>Login</button>
           </form>
         </div>
-        {/* <VisibleButton buttonLabel='Registrarse'>
+        <VisibleButton buttonLabel='Registrarse'>
           <RegisterForm />
-        </VisibleButton> */}
+        </VisibleButton>
       </>
     )
   }
