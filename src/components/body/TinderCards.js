@@ -16,14 +16,18 @@ function TinderCards (props) {
       })
   }, [])
 
-  const swiped = (direction, postId) => {
+  const swiped = (direction, postId, showed) => {
     if (direction === 'right') {
       const trabajadorId = props.user.usuario.id
       const values = { trabajadorId, postId }
       axios.post('http://localhost:3001/newApplication', values)
+      showed = false
+      axios.put(`http://localhost:3001/changePost/${postId}`, showed)
     }
     if (direction === 'left') {
       console.log('IZQUIERDAA')
+      showed = false
+      axios.put(`http://localhost:3001/changePost/${postId}`, showed)
     }
   }
 
@@ -50,12 +54,15 @@ function TinderCards (props) {
       }
       <div className='flex justify-center my-7'>
         {posts
+          .filter((post) => {
+            return post.showed === true
+          })
           .map((post) => (
             <TinderCard
               key={post.id}
               className='absolute'
               preventSwipe={['up', 'down']}
-              onSwipe={(dir) => swiped(dir, post.id)}
+              onSwipe={(dir) => swiped(dir, post.id, post.showed)}
               onCardLeftScreen={() => outOfFrame(post.title)}
             >
               <div
