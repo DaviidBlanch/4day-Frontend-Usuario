@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import { getAllPosts } from '../services/posts/getAllPosts'
 import TinderCard from 'react-tinder-card'
+import axios from 'axios'
 
-function TinderCards () {
+function TinderCards (props) {
   const [posts, setPosts] = useState([])
   const [loading, setloading] = useState(false)
 
@@ -15,13 +16,19 @@ function TinderCards () {
       })
   }, [])
 
-  const onSwipe = (direction) => {
-    if (direction === 'right') console.log('DERECHAA')
-    if (direction === 'left') console.log('IZQUIERDAA')
+  const swiped = (direction, postId) => {
+    if (direction === 'right') {
+      const trabajadorId = props.user.usuario.id
+      const values = { trabajadorId, postId }
+      axios.post('http://localhost:3001/newApplication', values)
+    }
+    if (direction === 'left') {
+      console.log('IZQUIERDAA')
+    }
   }
 
   const outOfFrame = (name) => {
-    console.log(name + ' Salió de la pantalla')
+    console.log(name + ' Salió de la pantalla ')
   }
 
   return (
@@ -42,26 +49,27 @@ function TinderCards () {
           : ''
       }
       <div className='flex justify-center my-7'>
-        {posts.map((post) => (
-          <TinderCard
-            key={post.id}
-            className='absolute'
-            preventSwipe={['up', 'down']}
-            onSwipe={onSwipe}
-            onCardLeftScreen={() => outOfFrame(post.title)}
-          >
-            <div
-              className='relative bg-white p-5 max-w-lg h-96 w-96 rounded-lg bg-cover bg-center shadow-md'
+        {posts
+          .map((post) => (
+            <TinderCard
+              key={post.id}
+              className='absolute'
+              preventSwipe={['up', 'down']}
+              onSwipe={(dir) => swiped(dir, post.id)}
+              onCardLeftScreen={() => outOfFrame(post.title)}
             >
-              <img className='rounded-t-lg' src={process.env.PUBLIC_URL + '/logo1.png'} alt='' />
-              <hr />
-              <h5 className='bottom-3 text-lg font-bold tracking-tight text-gray-900'>{post.title} <small className=' text-sm'>en</small> {post.empresa.name}</h5>
-              <h5 className='bottom-3 text-lg tracking-tight text-gray-900'><small className=' text-lg'>Salario:</small> {post.salary}€</h5>
-              <h5 className='bottom-3 text-base tracking-tight text-gray-900'><small className=' text-lg'>Pais:</small> {post.country}</h5>
-              <p className='bottom-3 text-right mb-6 text-sm text-gray-500 sm:mb-0'>{post.date.substring(0, 10)}</p>
-            </div>
-          </TinderCard>
-        ))}
+              <div
+                className='relative bg-white p-5 max-w-lg h-96 w-96 rounded-lg bg-cover bg-center shadow-md'
+              >
+                <img className='rounded-t-lg' src={process.env.PUBLIC_URL + '/logo1.png'} alt='' />
+                <hr />
+                <h5 className='bottom-3 text-lg font-bold tracking-tight text-gray-900'>{post.title} <small className=' text-sm'>en</small> {post.empresa.name}</h5>
+                <h5 className='bottom-3 text-lg tracking-tight text-gray-900'><small className=' text-lg'>Salario:</small> {post.salary}€</h5>
+                <h5 className='bottom-3 text-base tracking-tight text-gray-900'><small className=' text-lg'>Pais:</small> {post.country}</h5>
+                <p className='bottom-3 text-right mb-6 text-sm text-gray-500 sm:mb-0'>{post.date.substring(0, 10)}</p>
+              </div>
+            </TinderCard>
+          ))}
       </div>
     </div>
   )

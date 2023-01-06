@@ -48,8 +48,6 @@ export default function Perfil (props) {
           </li>
         </ul>
       </ul>
-      <hr />
-      <h2 className='bottom-3 text-lg font-bold tracking-tight text-gray-900'>Solicutdes enviadas:</h2>
     </div>
   )
 }

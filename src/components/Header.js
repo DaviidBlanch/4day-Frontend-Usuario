@@ -9,7 +9,6 @@ import '../styles/layout.css'
 import { Routes, Route, Link } from 'react-router-dom'
 
 export default function Header (props) {
-  console.log(props.usuario)
   const handleLogout = () => {
     window.localStorage.removeItem('loggedUsuario')
     window.location.reload()
@@ -50,7 +49,7 @@ export default function Header (props) {
           <Route path='/avisoLegal' element={<AvisoLegal />} />
           <Route path='/about' element={<About />} />
           <Route path='/profile' element={<Perfil user={props} />} />
-          <Route path='/' element={<TinderCards />} />
+          <Route path='/' element={<TinderCards user={props} />} />
         </Routes>
       </div>
       <br />
