@@ -20,6 +20,7 @@ export default function Header (props) {
           <Link to='/'>
             <img src={process.env.PUBLIC_URL + '/favicon.ico'} alt='homeLogo' id='img' />
           </Link>
+          <h1 className='font-bold'>{props.usuario.nombre}</h1>
           <div className='flex items-center md:order-2 text-red-700'>
             <Link to='' onClick={handleLogout} className=' font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 mr-1 md:mr-2 hover:text-red-900'>
               Cerrar sesión
