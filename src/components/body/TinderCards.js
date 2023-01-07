@@ -18,7 +18,6 @@ function TinderCards (props) {
 
   const swiped = (direction, postId) => {
     if (direction === 'right') {
-      console.log(postId)
       const trabajadorId = props.user.usuario.id
       const values = { trabajadorId, postId }
       axios.post('http://localhost:3001/newApplication', values)
