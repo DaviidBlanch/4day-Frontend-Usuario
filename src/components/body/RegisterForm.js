@@ -133,7 +133,7 @@ export default function Home () {
                     value=''
                     class='w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300' required
                   />
-                  <label htmlFor='remember' className='ml-2 text-sm font-medium text-gray-900'>Acepto las políticas de us de datos personales y los términos y condiciones.(*)</label>
+                  <label htmlFor='remember' className='ml-2 text-sm font-medium text-gray-900'>Acepto las políticas de uso de datos personales y los términos y condiciones.(*)</label>
                 </div>
                 <div className='mb-6'>
                   <label htmlFor='remember' className='ml-2 text-sm font-medium text-gray-900'>(*) Campos obligatorios</label>
