@@ -72,6 +72,39 @@ export default function Home () {
                   />
                 </div>
                 <div className='mb-6'>
+                  <label htmlFor='dni' className='block mb-2 text-sm font-medium text-gray-900'>NIF/NIE(*)</label>
+                  <input
+                    type='text'
+                    name='dni'
+                    id='dni'
+                    {...register('dni', { minLength: 12, maxLength: 16 })}
+                    placeholder='Introduce el NIF/NIE'
+                    className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5' required
+                  />
+                </div>
+                <div className='mb-6'>
+                  <label htmlFor='fechaNacimiento' className='block mb-2 text-sm font-medium text-gray-900'>Fecha de nacimiento(*)</label>
+                  <input
+                    type='text'
+                    name='fechaNacimiento'
+                    id='fechaNacimiento'
+                    {...register('fechaNacimiento', { minLength: 8, maxLength: 10 })}
+                    placeholder='Introduce la fecha de nacimiento'
+                    className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5' required
+                  />
+                </div>
+                <div className='mb-6'>
+                  <label htmlFor='afiliacionSS' className='block mb-2 text-sm font-medium text-gray-900'>Nº Afiliación S.S.(*)</label>
+                  <input
+                    type='text'
+                    name='afiliacionSS'
+                    id='afiliacionSS'
+                    {...register('afiliacionSS', { minLength: 7, maxLength: 8 })}
+                    placeholder='Introduce el número de la Seguridad Social'
+                    className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5' required
+                  />
+                </div>
+                <div className='mb-6'>
                   <label htmlFor='correo' className='block mb-2 text-sm font-medium text-gray-900'>e-mail(*)</label>
                   <input
                     type='text'
@@ -83,13 +116,24 @@ export default function Home () {
                   />
                 </div>
                 <div className='mb-6'>
-                  <label htmlFor='ciudad' className='block mb-2 text-sm font-medium text-gray-900'>Ciudad(*)</label>
+                  <label htmlFor='ciudad' className='block mb-2 text-sm font-medium text-gray-900'>Provincia(*)</label>
                   <input
                     type='text'
                     name='ciudad'
                     id='ciudad'
                     {...register('ciudad', { minLength: 3, maxLength: 15 })}
-                    placeholder='De qué ciudad eres?'
+                    placeholder='De qué provincia eres?'
+                    className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5' required
+                  />
+                </div>
+                <div className='mb-6'>
+                  <label htmlFor='nacionalidad' className='block mb-2 text-sm font-medium text-gray-900'>País(*)</label>
+                  <input
+                    type='text'
+                    name='nacionalidad'
+                    id='nacionalidad'
+                    {...register('nacionalidad', { minLength: 5, maxLength: 25 })}
+                    placeholder='De qué país eres?'
                     className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5' required
                   />
                 </div>
@@ -131,7 +175,7 @@ export default function Home () {
                     id='remember'
                     type='checkbox'
                     value=''
-                    class='w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300' required
+                    className='w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300' required
                   />
                   <label htmlFor='remember' className='ml-2 text-sm font-medium text-gray-900'>Acepto las políticas de uso de datos personales y los términos y condiciones.(*)</label>
                 </div>
