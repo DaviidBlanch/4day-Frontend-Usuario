@@ -77,7 +77,7 @@ export default function Home () {
                     type='text'
                     name='dni'
                     id='dni'
-                    {...register('dni', { minLength: 12, maxLength: 16 })}
+                    {...register('dni', { minLength: 9, maxLength: 9 })}
                     placeholder='Introduce el NIF/NIE'
                     className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5' required
                   />
