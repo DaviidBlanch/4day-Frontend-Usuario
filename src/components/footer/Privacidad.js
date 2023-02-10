@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 export default function Privacidad () {
   return (
-    <div className='text-left'>
+    <div className='text-justify'>
       <h1 className='text-3xl mb-4 font-medium text-gray-900'>Política de privacidad</h1>
       <p>
         4-DAY te informa sobre su Política de Privacidad respecto del tratamiento y protección

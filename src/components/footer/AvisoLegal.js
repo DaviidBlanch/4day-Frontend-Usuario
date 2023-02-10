@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 export default function AvisoLegal () {
   return (
-    <div className='text-left'>
+    <div className='text-justify'>
       <h1 className='text-3xl mb-4 font-medium text-gray-900'>Aviso Legal</h1>
       <p>
         En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad

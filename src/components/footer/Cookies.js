@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 export default function Cookies () {
   return (
-    <div className='text-left'>
+    <div className='text-justify'>
       <h1 className='text-3xl mb-4 font-medium text-gray-900'>Política de cookies</h1>
       <p>Fecha de entrada en vigor: 3 de junio de 2022</p><br />
       <p>
@@ -32,7 +32,7 @@ export default function Cookies () {
               <th scope='row' className='py-4 px-6 font-medium text-gray-900 whitespace-nowrap'>
                 Cookies
               </th>
-              <td className='py-4 px-6 text-gray-900'>
+              <td className='py-4 px-6 text-gray-900 text-justify'>
                 Una cookie es un pequeño archivo colocado en tu dispositivo electrónico que habilita las
                 funcionalidades de 4-DAY. Cualquier navegador que visite nuestro sitio puede recibir
                 cookies nuestras o de terceros, como nuestros clientes, socios o proveedores de servicios.
