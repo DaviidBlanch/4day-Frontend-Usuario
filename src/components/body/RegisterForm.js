@@ -140,7 +140,7 @@ export default function Home () {
                 <div className='mb-6'>
                   <label htmlFor='foto' className='block mb-2 text-sm font-medium text-gray-900'>Imagen(*)</label>
                   <input
-                    type='text'
+                    type='file'
                     name='foto'
                     id='foto'
                     {...register('foto')}

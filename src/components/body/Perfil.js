@@ -1,20 +1,35 @@
+import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { getDetailUsuario } from '../services/posts/getDetailUsuario'
 
 export default function Perfil (props) {
   const [usuario, setUsuario] = useState([])
+  const [imagen, setImagen] = useState(null)
 
   useEffect(() => {
     const id = props.user.usuario.id
     getDetailUsuario({ id })
       .then(
         (data) => {
-          console.log(data)
           setUsuario(data)
         }
       )
   }, [])
 
+  useEffect(() => {
+    const id = props.user.usuario.id
+
+    async function fetchData () {
+      try {
+        const res = await axios.get(`http://localhost:3001/imagenTrabajador/${id}`)
+        setImagen(res)
+      } catch (error) {
+        console.error(error)
+      }
+    }
+
+    fetchData()
+  }, [])
   return (
     <div>
       <ul className='text-sm font-medium text-gray-500 divide-x divide-gray-200 rounded-lg sm:flex' id='fullWidthTab' data-tabs-toggle='#fullWidthTabContent' role='tablist'>
@@ -22,7 +37,7 @@ export default function Perfil (props) {
           <li className='w-full'>
             {
       usuario.foto
-        ? <img className='w-36 h-36 rounded-full' src={process.env.PUBLIC_URL + '/PerfilUsuario.png'} alt={usuario.usuario} />
+        ? <img className='w-36 h-36 rounded-full' src={imagen?.config?.url} alt={usuario.usuario} />
         : <img className='w-36 h-36 rounded-full' src={process.env.PUBLIC_URL + '/PerfilUsuario.png'} alt={usuario.usuario} />
     }
             <h5 className='mt-2 text-lg font-bold text-gray-900'>{usuario.nombre} {usuario.apellidos}</h5>
