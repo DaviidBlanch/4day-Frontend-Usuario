@@ -66,7 +66,7 @@ function TinderCards (props) {
               <div
                 className='relative bg-white p-5 max-w-lg h-96 w-96 rounded-lg bg-cover bg-center shadow-md'
               >
-                <img className='rounded-t-lg' src={process.env.PUBLIC_URL + '/logo1.png'} alt='' />
+                <img className='max-h-60 pl-20' src={`http://localhost:3001/imagenPost/${post.id}`} alt={post.image.originalname} />
                 <hr />
                 <h5 className='bottom-3 text-lg font-bold tracking-tight text-gray-900'>{post.title} <small className=' text-sm'>en</small> {post.empresa.name}</h5>
                 <h5 className='bottom-3 text-lg tracking-tight text-gray-900'><small className=' text-lg'>Salario:</small> {post.salary}€</h5>
