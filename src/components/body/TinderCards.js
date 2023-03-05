@@ -12,6 +12,7 @@ function TinderCards (props) {
     getAllPosts()
       .then(data => {
         setPosts(data)
+        console.log(posts)
         setloading(false)
       })
   }, [])
@@ -66,7 +67,7 @@ function TinderCards (props) {
               <div
                 className='relative bg-white p-5 max-w-lg h-96 w-96 rounded-lg bg-cover bg-center shadow-md'
               >
-                <img className='max-h-60 pl-20' src={`http://localhost:3001/imagenPost/${post.id}`} alt={post.image.originalname} />
+                <img className='max-h-60 mx-auto max-w-xs rounded-sm' src={`http://localhost:3001/imagenPost/${post.id}`} alt={post.image.originalname} />
                 <hr />
                 <h5 className='bottom-3 text-lg font-bold tracking-tight text-gray-900'>{post.title} <small className=' text-sm'>en</small> {post.empresa.name}</h5>
                 <h5 className='bottom-3 text-lg tracking-tight text-gray-900'><small className=' text-lg'>Salario:</small> {post.salary}€</h5>
@@ -76,8 +77,8 @@ function TinderCards (props) {
             </TinderCard>
           ))}
       </div>
-      <div class='flex h-screen items-center '>
-        <div class='mr-auto'>
+      <div className='flex h-screen items-center '>
+        <div className='mr-auto'>
           <div className='max-w-xs text-red-800 flex items-center'>
             <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' className='bi bi-arrow-left mr-2' viewBox='0 0 16 16'>
               <path fillRule='evenodd' d='M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z' />
@@ -88,7 +89,7 @@ function TinderCards (props) {
             </div>
           </div>
         </div>
-        <div class='ml-auto'>
+        <div className='ml-auto'>
           <div className='max-w-xs text-green-800 flex items-center'>
             <div>
               <p className='text-right'>Arrastra a la</p>
