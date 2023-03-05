@@ -43,7 +43,7 @@ export default function Header (props) {
         </div>
       </nav>
       <br />
-      <div className='p-4 bg-white rounded-lg shadow md:px-6 md:py-3 dark:bg-gray-900 grid'>
+      <div className='p-4 bg-white rounded-lg shadow md:px-6 md:py-3 grid'>
         <Routes>
           <Route path='/cookies' element={<Cookies />} />
           <Route path='/privacidad' element={<Privacidad />} />
