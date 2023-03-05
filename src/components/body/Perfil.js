@@ -37,8 +37,8 @@ export default function Perfil (props) {
           <li className='w-full'>
             {
       usuario.foto
-        ? <img className='w-36 h-36 rounded-full' src={imagen?.config?.url} alt={usuario.usuario} />
-        : <img className='w-36 h-36 rounded-full' src={process.env.PUBLIC_URL + '/PerfilUsuario.png'} alt={usuario.usuario} />
+        ? <img className='w-36 h-36 rounded-full object-cover' src={imagen?.config?.url} alt={usuario.usuario} />
+        : <img className='w-36 h-36 rounded-full object-cover' src={process.env.PUBLIC_URL + '/PerfilUsuario.png'} alt={usuario.usuario} />
     }
             <h5 className='mt-2 text-lg font-bold text-gray-900'>{usuario.nombre} {usuario.apellidos}</h5>
             <p className='text-sm text-gray-500 sm:text-base'>{usuario.ciudad}, {usuario.nacionalidad}</p>
