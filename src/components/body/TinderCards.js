@@ -71,7 +71,7 @@ function TinderCards (props) {
                 <hr />
                 <h5 className='bottom-3 text-lg font-bold tracking-tight text-gray-900'>{post.title} <small className=' text-sm'>en</small> {post.empresa.name}</h5>
                 <h5 className='bottom-3 text-lg tracking-tight text-gray-900'><small className=' text-lg'>Salario:</small> {post.salary}€</h5>
-                <h5 className='bottom-3 text-base tracking-tight text-gray-900'><small className=' text-lg'>Ciudad:</small> {post.country}</h5>
+                <h5 className='bottom-3 text-base tracking-tight text-gray-900'><small className=' text-lg'>Lugar:</small> {post.country}</h5>
                 <p className='bottom-3 text-right mb-6 text-sm text-gray-500 sm:mb-0'>{post.date.substring(0, 10)}</p>
               </div>
             </TinderCard>
